@@ -2,11 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int GridTraveller(int n) {
-	vector < vector<int> > Grid(n+1, vector<int>(n+1, 0));
+int GridTraveller(int n,int m) {
+	vector < vector<int> > Grid(n+1, vector<int>(m+1, 0));
 	Grid[1][1] = 1;
 	for (int i = 1; i <= n; i++) {
-		for (int j = 1; j <= n; j++) {
+		for (int j = 1; j <= m; j++) {
 			if (i + 1 <= n)Grid[i + 1][j] += Grid[i][j];
 			if (j + 1 <= n)Grid[i ][j + 1] += Grid[i][j];
 		}
@@ -17,5 +17,5 @@ int GridTraveller(int n) {
 
 int main()
 {
-	cout << GridTraveller(3);
+	cout << GridTraveller(3,3);
 }
